@@ -74,5 +74,77 @@ But apart from that, we also do a lot of maintenance activities. For example, we
 
 So, this is how you can explain. It is a very simple answer. It's a very straightforward answer. You don't have to get scared about this question.
 
+## 1. Pod Lifecycles
+
+## CrashLoopBackOff:
+
+Cause: Usually indicates a problem within the application or configuration.
+Troubleshooting: Check pod logs (kubectl logs <pod-name>) and describe pod (kubectl describe pod <pod-name>).
+
+## ImagePullBackOff:
+
+Cause: The specified container image couldn't be pulled.
+Troubleshooting: Verify the image name and credentials. Check network connectivity and registry access.
+
+## 2. Service Discovery
+## ClusterIP:
+
+Usage: Internal service discovery within the cluster.
+Example: http://<service-name>.<namespace>.svc.cluster.local.
+
+## NodePort:
+Usage: Exposes the service on each node's IP at a static port.
+Example: Accessible externally using NodeIP:NodePort.
+
+## LoadBalancer:
+Usage: Provides an externally accessible IP with external traffic balanced to service endpoints.
+Example: Useful in cloud environments with load balancer support.
+
+## 3. Scaling
+## Horizontal Pod Autoscaling (HPA):
+Trigger: Based on observed CPU utilization or custom metrics.
+Configuration: Define scaling thresholds and behavior in the HPA object.
+
+## 4. Rolling Updates
+Rolling Update:
+Strategy: Gradual replacement of old pods with new ones.
+Configuration: Defined in the deployment spec using strategies like "RollingUpdate."
+
+## 5. Persistent Storage
+## Persistent Storage in Pods:
+
+Configuration: Specify storage requirements in the pod spec using Persistent Volume Claims (PVCs).
+Types: Local storage, Network-Attached Storage (NAS), and cloud-specific solutions like AWS EBS or Azure Disk.
+
+## 6. Security
+## RBAC (Role-Based Access Control):
+
+Roles: Define sets of permissions.
+RoleBinding: Associates roles with specific users or groups.
+ClusterRoles: Roles that apply globally.
+
+## 7. Networking
+## Services:
+
+ClusterIP: Default for internal service discovery.
+NodePort: Exposes service externally on node IP.
+LoadBalancer: Exposes service with an external load balancer.
+
+## Ingress:
+Routing: Routes external HTTP/S traffic to services based on rules.
+Example Rule: Direct /api to a specific service and /web to another.
+
+## Network Policies:
+Control: Define how pods communicate with each other.
+Example Rule: Restrict communication between specific pods.
+
+## 8. Monitoring and Logging
+## Monitoring:
+## Prometheus: Popular monitoring tool for Kubernetes and Visual representation using Grafana.
+Metrics: Monitor cluster health, pod resource usage, and custom metrics.
+## Logging:
+Fluentd, Elasticsearch: Collect and analyze logs from containers.
+Log Aggregation: Centralize logs for easier analysis.
+
 
 
