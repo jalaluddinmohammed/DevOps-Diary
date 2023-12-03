@@ -1,1 +1,1 @@
-# This doc explains the K8S architecure and its components.
+# This doc explains the K8S architecture and its components.
