@@ -55,7 +55,8 @@ There are three different types of services that a user can create.
 2. Node Port Mode
 3. Load Balancer Mode
 
-![Uploading image.png…]()
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/60e18b5f-53ca-487d-a3da-38a53e8669c0)
 
 
 
