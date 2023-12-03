@@ -55,7 +55,6 @@ There are three different types of services that a user can create.
 2. Node Port Mode
 3. Load Balancer Mode
 
-![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/14c26ddf-3dee-49b0-af20-09634a8c1481)
 
 ## What is the role of Kubelet ?
 
