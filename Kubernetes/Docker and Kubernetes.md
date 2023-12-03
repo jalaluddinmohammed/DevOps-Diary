@@ -1,4 +1,4 @@
-# Evolution of Kubernetes and DevOps
+# History of Docker and Kubernetes
 
 Kubernetes has become the leading standard in container orchestration. Since its inception in 2014, created by Google – inspired by its own workload orchestration system, Borg – Kubernetes was donated to the Cloud Native Computing Foundation. Kubernetes has gained tremendous popularity, being adopted by start-ups as well as major enterprises, with all major public cloud vendors offering a managed Kubernetes service.
 
