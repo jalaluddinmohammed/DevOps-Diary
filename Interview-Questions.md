@@ -55,6 +55,9 @@ There are three different types of services that a user can create.
 2. Node Port Mode
 3. Load Balancer Mode
 
+![Uploading image.png…]()
+
+
 
 ## What is the role of Kubelet ?
 
