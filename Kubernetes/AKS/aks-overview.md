@@ -1,7 +1,11 @@
-![Uploading image.png…]()
+
 # Azure Kubernetes Service (AKS) Overview
 
 Azure Kubernetes Service (AKS) simplifies the creation and management of Kubernetes clusters. In a typical Kubernetes cluster, there are master nodes responsible for the Kubernetes API and cluster state, and worker nodes that run the actual workload.
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/591ec2fb-330c-4474-a24e-719837787a02)
+
+
 
 ## Cluster Creation with AKS
 
