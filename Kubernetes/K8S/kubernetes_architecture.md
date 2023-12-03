@@ -9,11 +9,12 @@
 
 Kubernetes follows a distributed system architecture with several key components. Let's break down the primary components and their roles:
 
-## 1. Master Node
+## 1. Master Node ( Control Plane)
 
 - **API Server:** Exposes the Kubernetes API for processing RESTful API requests.
 - **Controller Manager:** Manages various controllers that regulate the state of the cluster, such as replication controllers, endpoints controllers, and more.
 - **Scheduler:** Assigns workloads to nodes based on resource availability.
+- **Cloud Controller Manager:** This component is used by the Cloud Providers such as AWS, Azure and GCP to link your cluster into your cloud providers API, example: when you need a LB to be provisioned on cloud then this component will talk to your cloud provider and get the LB provisioned.
 
 ## 2. Node (Worker Node)
 
