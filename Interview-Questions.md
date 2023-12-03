@@ -1,4 +1,4 @@
-## Interview Questions & Answers - Part 1
+## Interview Questions & Answers
 
 ## What is the difference between Docker and Kubernetes ?
 
