@@ -4,6 +4,8 @@
 
 
 
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/a1654616-c0c9-4de6-81bb-7a2e13348b66)
+
 
 # Kubernetes Architecture Overview
 
