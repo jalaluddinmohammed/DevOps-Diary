@@ -27,6 +27,7 @@ Visit the guestbook website
 -  The guestbook application needs to communicate with the Redis followers to read data.
 -  The guestbook app uses a PHP frontend. It is configured to communicate with either the Redis follower or leader Services, depending on whether the request is a read or a write.
 -  The frontend exposes a JSON interface, and serves a jQuery-Ajax-based UX.
+-  Redis Follower is also served here as a backup for Redis Leader, if Redis leader goes down, then Follower can be promoted as a Redis Leader, making fault tolerance.
 
 ## guest-book-all-in-one.yaml
 
