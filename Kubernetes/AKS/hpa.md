@@ -59,5 +59,34 @@ spec:
 
 ## Now lets genereate some load.
 
+Next, you will use a load generator to put load on front end URL.
+
+```yaml
+# load-generator-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-generator
+spec:
+  selector:
+    matchLabels:
+      run: load-generator
+  replicas: 100 # 2
+  template:
+    metadata:
+      labels:
+        run: load-generator
+    spec:
+      containers:
+      - name: load-generator
+        image: busybox
+        args: [/bin/sh, -c, 'while true; do wget -q -O- http://51.105.209.84; done']
+```
 
 
+
+## Now we started seeing HPA is doing auto scale for front end pods
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/41db4248-6cc0-41bc-97d1-0f798863b4f9)
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/0591fab2-06e8-4ce3-bd4f-37d46d682141)
