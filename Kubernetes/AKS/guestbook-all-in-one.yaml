@@ -4,6 +4,7 @@
 ## Frontend Deploy
 ## Frontend Service Expose
 
+```yaml
 ### Setting up the Redis leader
 apiVersion: apps/v1
 kind: Deployment
@@ -150,3 +151,4 @@ spec:
   selector:
     app: guestbook
     tier: frontend
+```
