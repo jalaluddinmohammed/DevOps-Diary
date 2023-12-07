@@ -29,20 +29,25 @@ HPA monitors Kubernetes metrics at regular intervals and, based on the rules you
 one instance:
 
 kubectl scale deployment/frontend --replicas=1
-## save this as hpa.yaml
 
--apiVersion: autoscaling/v1
-- kind: HorizontalPodAutoscaler
-- metadata:
--  name: frontend-scaler
-- spec:
- -   scaleTargetRef:
--   apiVersion: apps/v1
--    kind: Deployment
--    name: frontend 
-- minReplicas: 1
-- maxReplicas: 10
-- targetCPUUtilizationPercentage: 5
+## Save this as hpa.yaml
+
+## Horizontal Pod Autoscaler Configuration
+
+```yaml
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-scaler
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend 
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+
 
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/1bee2635-e08f-4de9-8a0f-e7e3a6965008)
