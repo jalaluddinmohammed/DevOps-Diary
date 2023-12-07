@@ -1,3 +1,5 @@
+### To perform this lab first deploy all kubernetes manifest using guestbook-all-in-one.yaml
+
 ## Manual Scaling
 
 Kubernetes gives us the ability to scale each component of an application dynamically. In this section, we will show you how to scale the front end of the guestbook application. Right now, the front-end deployment is deployed with three replicas.
@@ -22,3 +24,20 @@ Scaling manually is useful when you're working on your cluster.
 For example, if you know your load is going to increase, you can manually scale out your application.
 In most cases, however, you will want some sort of autoscaling to happen on your application. In Kubernetes, you can configure autoscaling of your deployment using an object called the Horizontal Pod Autoscaler (HPA).
 HPA monitors Kubernetes metrics at regular intervals and, based on the rules you define, it automatically scales your deployment. For example, you can configure the HPA to add additional pods to your deployment once the CPU utilization of your application is above 50%.
+
+1. To start the configuration, let's first manually scale down our deployment to
+one instance:
+
+kubectl scale deployment/frontend --replicas=1
+
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/c84939ed-8af3-4325-862b-661047209635)
+
+
+
+
+
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/1bee2635-e08f-4de9-8a0f-e7e3a6965008)
+
+
