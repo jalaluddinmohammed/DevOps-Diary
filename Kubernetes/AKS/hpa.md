@@ -47,7 +47,7 @@ spec:
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50
-
+```
 
 ## After you execute hpa.yaml you will find below.
 
