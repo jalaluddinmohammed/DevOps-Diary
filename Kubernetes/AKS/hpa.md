@@ -49,7 +49,15 @@ spec:
   targetCPUUtilizationPercentage: 50
 
 
+## After you execute hpa.yaml you will find below.
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/1bee2635-e08f-4de9-8a0f-e7e3a6965008)
+
+## Now the load is normal, hence HPA is not doing auto scaling.
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/a9d0e8b9-966b-45a3-baf1-e8fe2493edaf)
+
+## Now lets genereate some load.
+
 
 
