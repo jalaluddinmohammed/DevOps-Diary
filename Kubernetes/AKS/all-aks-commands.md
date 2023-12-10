@@ -12,19 +12,21 @@ az aks create --resource-group handson --name handsonaks --generate-ssh-keys
 ```bash
 Copy code
 az aks delete --resource-group handson --name handsonaks
-- Deletes the AKS cluster named 'handsonaks' in the resource group 'handson'.
+
+Deletes the AKS cluster named 'handsonaks' in the resource group 'handson'.
 
 ## Get AKS Cluster Credentials
 
 az aks get-credentials -g handson -n handsonaks
 
-- Downloads and sets up the kubeconfig file to access the AKS cluster named 'handsonaks' in the resource group 'handson'.
+Downloads and sets up the kubeconfig file to access the AKS cluster named 'handsonaks' in the resource group 'handson'.
 
 ## Kubernetes (kubectl) Commands
 
 Alias for kubectl
 
 alias k=kubectl
+
 Creates an alias 'k' for the 'kubectl' command.
 
 ## Get Nodes
