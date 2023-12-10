@@ -1,6 +1,6 @@
 ## Create RG
 
-- az group create --name demoResourceGroup --location westeurope
+- az group create --name rg-handsonaks --location westeurope
 
 # Azure AKS Commands
 
