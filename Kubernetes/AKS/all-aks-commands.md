@@ -1,6 +1,6 @@
 ## Create RG
 
-- az group create --name demoResourceGroup --location westus
+- az group create --name demoResourceGroup --location westeurope
 
 # Azure AKS Commands
 
