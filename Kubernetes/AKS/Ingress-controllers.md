@@ -38,37 +38,37 @@
 ## 4. Commands:
 
 - **Create the RG:**
- - az group create -n agic -l westeurope
+    - az group create -n agic -l westeurope
 
 - **Create the VNET:**
-- az network vnet create -n agic-vnet -g agic   --address-prefix 192.168.0.0/24 --subnet-name agic-subnet   --subnet-prefix 192.168.0.0/24
+    - az network vnet create -n agic-vnet -g agic   --address-prefix 192.168.0.0/24 --subnet-name agic-subnet   --subnet-prefix 192.168.0.0/24
 
 - **Create the Application Gateway:**
-- az network application-gateway create -n agic -l westeurope  -g agic --sku Standard_v2 --public-ip-address agic-pip  --vnet-name agic-vnet --subnet agic-subnet --priority 1
+    - az network application-gateway create -n agic -l westeurope  -g agic --sku Standard_v2 --public-ip-address agic-pip  --vnet-name agic-vnet --subnet agic-subnet --priority 1
 
 - **Getting the application gateway ID:**
-- appgwId=$(az network application-gateway show -n agic -g agic -o tsv --query "id") 
+     - appgwId=$(az network application-gateway show -n agic -g agic -o tsv --query "id") 
 
  - **Create the AKS Cluster:**
-- az aks create --resource-group rg-handsonaks --name handsonaks --generate-ssh-keys
+     - az aks create --resource-group rg-handsonaks --name handsonaks --generate-ssh-keys
 
  - **Connect to the AKS Cluster:**
-- az aks get-credentials -g rg-handsonaks -n handsonaks
+     - az aks get-credentials -g rg-handsonaks -n handsonaks
 
  - **Setting an alias for kubectl:**
-- alias k=kubectl
+    - alias k=kubectl
 
  - **Enabled the ingress addons the AKS Cluster:**
-- az aks enable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw --appgw-id $appgwId
+     - az aks enable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw --appgw-id $appgwId
 
 - **Create the guest-book yaml file:**
-- vi guest-book-all.yaml 
+    - vi guest-book-all.yaml 
 
 - **Apply the guest-book yaml file:**
-- k apply -f guest-book-all.yaml 
+    - k apply -f guest-book-all.yaml 
 
 - **Create the agic resource yaml file:**
-vi agic1-service.yaml
+    - vi agic1-service.yaml
 
 ```yaml
 
@@ -93,19 +93,19 @@ spec:
 ```
 
 - **Apply the agic resource yaml file:**
- - k apply -f agic1-service.yaml 
+     - k apply -f agic1-service.yaml 
 
 - **Getting the service:**
- - k get svc
+     - k get svc
 
 - **Delete the agic:**
- - k delete -f agic1-service.yaml
+    - k delete -f agic1-service.yaml
 
 - **Delete the guest-book application:**
--  k delete -f guest-book-all.yaml
+    -  k delete -f guest-book-all.yaml
 
 - **Delete the AKS Cluster:**
-- az aks delete --resource-group rg-handsonaks --name handsonaks
+    - az aks delete --resource-group rg-handsonaks --name handsonaks
 
 
 
