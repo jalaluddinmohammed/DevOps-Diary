@@ -37,4 +37,65 @@
   - Your provided YAML is an Ingress resource. It directs traffic to the `frontend` service on port 80 when the path is `/`. The `kubernetes.io/ingress.class: azure/application-gateway` annotation indicates that the Ingress controller (AGIC) with the specified class should handle this Ingress resource.
 ## Commands:
 
+ az group create -n agic -l westeurope
+   
+az network vnet create -n agic-vnet -g agic   --address-prefix 192.168.0.0/24 --subnet-name agic-subnet   --subnet-prefix 192.168.0.0/24
+   
+
+az network application-gateway create -n agic -l westeurope  -g agic --sku Standard_v2 --public-ip-address agic-pip  --vnet-name agic-vnet --subnet agic-subnet --priority 1
+
+appgwId=$(az network application-gateway show -n agic -g agic -o tsv --query "id") 
+ 
+
+az aks create --resource-group rg-handsonaks --name handsonaks --generate-ssh-keys
+
+az aks enable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw --appgw-id $appgwId
+
+alias k=kubectl
+   
+
+az aks get-credentials -g rg-handsonaks -n handsonaks
+
+k apply -f guest-book-all.yaml 
+
+
+k apply -f guest-book-all.yaml 
+
+
+vi agic1-service.yaml
+
+
+```yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-frontend-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
+
+```
+
+ k apply -f agic1-service.yaml 
+
+ k get svc
+
+ k delete -f agic1-service.yaml
+
+ k delete -f guest-book-all.yaml
+
+ az aks delete --resource-group rg-handsonaks --name handsonaks
+
+
 
