@@ -12,8 +12,8 @@ az aks create --resource-group rg-handsonaks --name handsonaks --generate-ssh-ke
 
 ## Delete AKS Cluster
 
-Copy code
-az aks delete --resource-group handson --name handsonaks
+
+az aks delete --resource-group rg-handsonaks --name handsonaks
 
 - Deletes the AKS cluster named 'handsonaks' in the resource group 'handson'.
 
