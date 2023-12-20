@@ -93,7 +93,14 @@ You might see either a status called ErrImagePull or ImagePullBackOff. Both erro
 The ErrImagePull error describes just this; ImagePullBackOff describes that Kubernetes will back off (wait) before retrying to download the image. This back-off has an exponential delay, going from 10 to 20 to 40 seconds and beyond, up to 5 minutes.
  
 - Run the following command to get the full error details:
-kubectl describe pods pod-name
+- kubectl describe pods pod-name
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/da561c0d-291f-4275-bff8-97c94a9c5698)
+
+
+Image pull errors can occur when images aren't available or when you don't have access to the container registry.
+
+## Because Kubernetes did a rolling update, the front end was continuously available with zero downtime. Kubernetes recognized a problem with the new specification and stopped rolling out additional changes automatically.
 
 ## 2. Service Discovery
 ## ClusterIP:
