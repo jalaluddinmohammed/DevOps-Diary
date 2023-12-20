@@ -63,6 +63,15 @@
 
  - **Enabled the ingress addons the AKS Cluster:**
      - az aks enable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw --appgw-id $appgwId
+     **az aks enable-addons:**
+This Azure CLI command is used to enable add-ons for an AKS cluster.
+- **-n handsonaks:** Specifies the name of the AKS cluster (in this case, "handsonaks").
+- **-g rg-handsonaks:** Specifies the resource group name where the AKS cluster is located.
+- **-a ingress-appgw:** Specifies the add-on to enable, which is the AGIC for integrating with Azure Application Gateway.
+- **--appgw-id $appgwId:** Specifies the Application Gateway ID obtained in the previous step. This connects the AKS cluster to the specified Application Gateway.
+
+In summary, these commands are part of the process to integrate an AKS cluster with an Application Gateway using the Application Gateway Ingress Controller add-on. The Application Gateway ID is obtained, and then the AGIC add-on is enabled for the AKS cluster, specifying the Application Gateway ID for the integration.
+     
 
 - **Create the guest-book yaml file:**
     - vi guest-book-all.yaml 
