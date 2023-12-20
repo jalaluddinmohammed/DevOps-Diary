@@ -42,6 +42,9 @@
 
 - **Create the VNET:**
     - az network vnet create -n agic-vnet -g agic   --address-prefix 192.168.0.0/24 --subnet-name agic-subnet   --subnet-prefix 192.168.0.0/24
+- **Create the PublicIP:**
+    - az network public-ip create -n agic-pip -g agic --allocation-method Static --sku Standard --dns-name "agic"
+
 
 - **Create the Application Gateway:**
     - az network application-gateway create -n agic -l westeurope  -g agic --sku Standard_v2 --public-ip-address agic-pip  --vnet-name agic-vnet --subnet agic-subnet --priority 1
