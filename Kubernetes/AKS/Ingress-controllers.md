@@ -113,7 +113,8 @@ spec:
      - az aks disable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw
 - **Delete the agic:**
     - k delete -f agic1-service.yaml
-
+- **Delete the application gateway:**
+    - az network application-gateway delete -n agic -g agic
 - **Delete the guest-book application:**
     -  k delete -f guest-book-all.yaml
 
