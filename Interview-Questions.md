@@ -87,6 +87,14 @@ Troubleshooting: Check pod logs (kubectl logs <pod-name>) and describe pod (kube
 Cause: The specified container image couldn't be pulled.
 Troubleshooting: Verify the image name and credentials. Check network connectivity and registry access.
 
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/ddb90e4a-bb34-4996-ba32-d443e8a8b00f)
+
+You might see either a status called ErrImagePull or ImagePullBackOff. Both errors refer to the fact that Kubernetes cannot pull the image from the registry.
+The ErrImagePull error describes just this; ImagePullBackOff describes that Kubernetes will back off (wait) before retrying to download the image. This back-off has an exponential delay, going from 10 to 20 to 40 seconds and beyond, up to 5 minutes.
+ 
+- Run the following command to get the full error details:
+kubectl describe pods/<failed pod name>
+
 ## 2. Service Discovery
 ## ClusterIP:
 
