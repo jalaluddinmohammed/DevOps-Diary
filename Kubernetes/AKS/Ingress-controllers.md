@@ -63,7 +63,8 @@
 
  - **Enabled the ingress addons the AKS Cluster:**
      - az aks enable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw --appgw-id $appgwId
-     **az aks enable-addons:**
+     - 
+ - **az aks enable-addons:**
 This Azure CLI command is used to enable add-ons for an AKS cluster.
 - **-n handsonaks:** Specifies the name of the AKS cluster (in this case, "handsonaks").
 - **-g rg-handsonaks:** Specifies the resource group name where the AKS cluster is located.
