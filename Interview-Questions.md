@@ -93,7 +93,7 @@ You might see either a status called ErrImagePull or ImagePullBackOff. Both erro
 The ErrImagePull error describes just this; ImagePullBackOff describes that Kubernetes will back off (wait) before retrying to download the image. This back-off has an exponential delay, going from 10 to 20 to 40 seconds and beyond, up to 5 minutes.
  
 - Run the following command to get the full error details:
-- kubectl describe pods pod-name
+## kubectl describe pods pod-name
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/da561c0d-291f-4275-bff8-97c94a9c5698)
 
@@ -101,6 +101,67 @@ The ErrImagePull error describes just this; ImagePullBackOff describes that Kube
 Image pull errors can occur when images aren't available or when you don't have access to the container registry.
 
 ## Because Kubernetes did a rolling update, the front end was continuously available with zero downtime. Kubernetes recognized a problem with the new specification and stopped rolling out additional changes automatically.
+
+
+
+## How to login to PODS?
+
+## kubectl exec -it <pod-name> -- bash
+
+- This command lets you run commands on the command line of that pod. With the -it option, it attaches an interactive terminal to the pod and gives you a shell that you can run commands on. The following command launches a Bash terminal on the pod:
+
+
+  ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/5b68c548-6301-48a9-ad49-09488640818b)
+
+# Kubernetes Commands Cheat Sheet
+
+## `kubectl exec`
+ 
+ - Execute a command in a running container within a pod0
+- Used to execute commands inside a running container within a pod.
+- It provides an interactive shell to the container, allowing you to run commands, debug, or perform troubleshooting.
+- It supports both interactive and non-interactive modes.
+- You can execute commands as if you were working directly inside the container.
+
+- kubectl exec -it <pod-name> -c <container-name> -- /bin/bash
+
+Explanation:
+
+-it: Opens an interactive terminal.
+
+<pod-name>: Replace with the name of the pod.
+
+-c <container-name>: Specify the container name if there are multiple containers in the pod.
+
+-- /bin/bash: Replace with the desired command to execute inside the container.
+
+## kubectl logs
+ Fetch and display logs of a container running within a pod
+
+- kubectl logs <pod-name> -c <container-name>
+
+Explanation:
+<pod-name>: Replace with the name of the pod.
+-c <container-name>: Specify the container name if there are multiple containers in the pod.
+
+- Used to fetch and display the logs of a container running within a pod.
+- Primarily focuses on providing access to the standard output (stdout) and standard error (stderr) logs of a specific container in a pod.
+- Useful for real-time monitoring and debugging of application logs.
+
+
+## kubectl describe
+# Display detailed information about a Kubernetes resource
+
+## kubectl describe pod <pod-name>
+
+Explanation:
+
+<pod-name>: Replace with the name of the pod or the specific resource you want to describe.
+
+- Used to display detailed information about Kubernetes resources, including pods, nodes, services, etc.
+- Provides metadata and configuration details for a given resource.
+- The information includes events, labels, annotations, resource utilization, and other relevant details.
+- It's useful for understanding the current state and configuration of a resource.
 
 ## 2. Service Discovery
 ## ClusterIP:
