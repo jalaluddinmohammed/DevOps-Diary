@@ -44,7 +44,7 @@ Kube-proxy is an essential component of a Kubernetes cluster, as it ensures that
 
 ## What are the different types of services within Kubernetes?
 
-3 Major responsibilities of Service in k8s.
+## 3 Major responsibilities of Service in k8s.
 	1. Service discovery
 	2. Load balancing
 	3. Exposing the application to external world. ( Different Service modes)
