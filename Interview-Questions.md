@@ -93,7 +93,7 @@ You might see either a status called ErrImagePull or ImagePullBackOff. Both erro
 The ErrImagePull error describes just this; ImagePullBackOff describes that Kubernetes will back off (wait) before retrying to download the image. This back-off has an exponential delay, going from 10 to 20 to 40 seconds and beyond, up to 5 minutes.
  
 - Run the following command to get the full error details:
-kubectl describe pods/<failed pod name>
+kubectl describe pods pod-name
 
 ## 2. Service Discovery
 ## ClusterIP:
