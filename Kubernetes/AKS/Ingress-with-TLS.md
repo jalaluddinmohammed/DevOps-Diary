@@ -61,3 +61,5 @@ spec:
     - agic.westeurope.cloudapp.azure.com
     secretName: frontend-tls
 ```
+-**Delete the Cert-Mangaer:**
+- kubectl delete -f https://github.com/jetstack/cert-manager/releases/download/v1.13.3/cert-manager.yaml
