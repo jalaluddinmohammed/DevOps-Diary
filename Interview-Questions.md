@@ -163,6 +163,19 @@ Explanation:
 - The information includes events, labels, annotations, resource utilization, and other relevant details.
 - It's useful for understanding the current state and configuration of a resource.
 
+## The following points summarize what was covered in this section on how to identify an error and how to fix it:
+- Errors can come in many shapes and forms.
+- Most of the errors encountered by the deployment team are configuration
+issues.
+- Use logs to identify the root cause.
+- Using kubectl exec on a container is a useful debugging strategy.
+- Note that broadly allowing kubectl exec is a serious security risk, as it lets the Kubernetes operator execute commands directly in the pods they have access to. Make sure that only a subset of operators has the ability to use the kubectl exec command. You can use role-based access control to manage this access restriction, as you'll learn in Chapter 8, Role-based access controlin AKS.
+- Anything printed to stdout and stderr shows up in the logs (independent of the application/language/logging framework).
+
+
+
+
+
 ## 2. Service Discovery
 ## ClusterIP:
 
