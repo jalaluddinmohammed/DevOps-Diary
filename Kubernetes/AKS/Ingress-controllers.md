@@ -109,7 +109,8 @@ spec:
 
 - **Getting the service:**
      - k get svc
-
+- **Disable the addon:**
+     - az aks disable-addons -n handsonaks -g rg-handsonaks -a ingress-appgw
 - **Delete the agic:**
     - k delete -f agic1-service.yaml
 
