@@ -37,6 +37,8 @@
   - Your provided YAML is an Ingress resource. It directs traffic to the `frontend` service on port 80 when the path is `/`. The `kubernetes.io/ingress.class: azure/application-gateway` annotation indicates that the Ingress controller (AGIC) with the specified class should handle this Ingress resource.
 ## 4. Commands:
 
+- **Set the Subscription:**
+- az account set --subscription b8ebe9fd-107c-4a86-ac0a-cd70af3e4119
 - **Create the RG:**
     - az group create -n agic -l westeurope
 
