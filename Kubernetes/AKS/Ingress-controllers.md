@@ -38,7 +38,7 @@
 ## 4. Commands:
 
 - **Set the Subscription:**
-- az account set --subscription b8ebe9fd-107c-4a86-ac0a-cd70af3e4119
+    - az account set --subscription b8ebe9fd-107c-4a86-ac0a-cd70af3e4119
 - **Create the RG:**
     - az group create -n agic -l westeurope
 
