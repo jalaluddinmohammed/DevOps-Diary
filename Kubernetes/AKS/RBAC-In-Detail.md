@@ -1,3 +1,8 @@
+## Reference Document:*
+
+``` bash
+https://techcommunity.microsoft.com/t5/fasttrack-for-azure/azure-kubernetes-service-rbac-options-in-practice/ba-p/3684275
+```
 # Managing Access to Azure Kubernetes Service (AKS) Clusters
 
 When building an AKS cluster for your team, one of the primary considerations is managing access for different groups or individuals while maintaining simplicity and security.
@@ -150,5 +155,63 @@ Assign the IAM role "Azure Kubernetes Service RBAC Cluster Admin" to the 'aks-bl
 Utilize the Az CLI to assign the RBAC Cluster Admin role scoped only to the 'blog' namespace:
 
 ```bash
-# Az CLI command to assign RBAC Cluster Admin role specifically to the 'blog' namespace
-az aks update-credentials --resource-group <resource-group-name> --name <aks-cluster-name> --reset-service-principal --scope cluster --output none
+az role assignment create --role "Azure Kubernetes Service RBAC Admin" --assignee <<groud-id for aks-blog-admins>> --scope /subscriptions/<<subscription>>/resourcegroups/<<rg>>/providers/Microsoft.ContainerService/managedClusters/<<cluster-name>>/namespaces/blog
+```
+Note that the --scope property assigns that role only for the blog namespace. One downside for this approach is that you can't see this role assignment in the Portal either. You will need to utilize Az CLI to see the scopes you have assigned for namespaces:
+
+``` bash
+az role assignment list --scope /subscriptions/<<subscription>>/resourcegroups/<<rg>>/providers/Microsoft.ContainerService/managedClusters/<<cluster-name>>/namespaces/blog
+```
+## Managing User Access in the 'blog' Namespace
+
+### Step 2: Empowering aks-blog-admins for User Access Management
+
+Once users from the 'aks-blog-admins' group can successfully log in using 'az aks get-credentials' and perform operations within the 'blog' namespace using tools like kubectl, the challenge lies in how they can manage access for other regular non-admin users within this namespace without relying on Kubernetes YAML rolebindings.
+
+### Step 3: Assigning IAM Role for User Access Administration
+
+Utilize an Owner user for your cluster to assign the IAM role "User Access Administrator" to the 'aks-blog-admins' group. However, similar to Step 2, using the Portal for this assignment will grant the group rights to manage access for the entire cluster, which isn't desired. To specifically assign this role just for the 'blog' namespace:
+
+### Step 4: Az CLI for Scoped Role Assignment
+
+Employ the Az CLI to assign the "User Access Administrator" role scoped exclusively to the 'blog' namespace:
+
+```bash
+# Az CLI command to assign the "User Access Administrator" role specifically to the 'blog' namespace
+az role assignment create --assignee <group-object-id> --role "User Access Administrator" --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerService/managedClusters/<aks-cluster-name>/namespaces/blog --output none
+
+
+``` bash
+az role assignment create --role "User Access Administrator" --assignee <<groud-id for aks-blog-admins>> --scope /subscriptions/<<subscription>>/resourcegroups/<<rg>>/providers/Microsoft.ContainerService/managedClusters/<<cluster-name>>/namespaces/blog
+
+```
+ Now, users under aks-blog-admins have permissions to assign Azure RBAC roles to other users for the scope of the blog namespace only. They can execute this Az CLI command to assign "Azure Kubernetes Service RBAC Writer" to group aks-blog-users:
+
+ ``` bash
+az role assignment create --role "Azure Kubernetes Service RBAC Writer" --assignee <<groud-id for aks-blog-users>> --scope /subscriptions/<<subscription>>/resourcegroups/<<rg>>/providers/Microsoft.ContainerService/managedClusters/<<cluster-name>>/namespaces/blog
+```
+
+And that's it. After that, any Azure user under group aks-blog-users can get their cluster credentials using az aks get-credentials and perform writing operations in the namespace, but they can't give access to others because this group doesn't have User Access Administrator IAM role like the admin group. For description on what each Azure RBAC role allows inside a AKS cluster.
+
+
+# Conclusion and Recommendations
+
+The choice between the AKS authentication and authorization options revolves around the extent of Azure RBAC utilization for authentication and authorization purposes. There is no singularly correct choice; it depends on specific needs. Consider the following factors to guide your decision-making:
+
+### Local Accounts with Kubernetes RBAC:
+
+- Use only if AKS cluster users cannot be part of Azure AD for certain reasons.
+- Managing users within raw Kubernetes becomes complex, especially with larger teams.
+
+### Azure AD Authentication with Kubernetes RBAC:
+
+- Opt for this if utilizing Azure RBAC solely for controlling AKS credential access while managing user permissions via Kubernetes YAML manifests.
+- Enhances cluster portability as role bindings are included within the cluster, although they contain Azure-specific group IDs, making tracking access a bit challenging.
+- Managing AD group-based access in YAML requires careful documentation and versioning in source control for easier correlation.
+
+### Azure AD Authentication with Azure RBAC:
+
+- Select this option if utilizing Azure RBAC to control user actions directly within the cluster without YAML configurations.
+- For assigning permissions to specific namespaces, the Az CLI is required as the Portal lacks this capability currently. The Access Control (IAM) blade assigns roles for the entire cluster.
+
+The decision depends on your specific use case and preferences, considering the management complexity, YAML involvement, ease of access tracking, and tooling limitations within the Azure Portal for precise namespace-level permissions.
