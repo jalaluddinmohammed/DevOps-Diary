@@ -1,4 +1,4 @@
-## Reference Document:*
+## Reference Document:
 
 ``` bash
 https://techcommunity.microsoft.com/t5/fasttrack-for-azure/azure-kubernetes-service-rbac-options-in-practice/ba-p/3684275
