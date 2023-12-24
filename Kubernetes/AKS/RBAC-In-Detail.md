@@ -220,7 +220,10 @@ The decision depends on your specific use case and preferences, considering the 
         * RoleBinding
         * IAM Roles for getting AKS credentials.
 
-
+### Reference Document
+``` bash
+https://stacksimplify.com/azure-aks/kubernetes-rbac-role-and-rolebinding-with-azure-ad/
+```
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/734a0676-b3f3-4aa7-8574-42334d0ed94c)
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/b8ff4e06-e697-42f1-b27f-73bb6742db0a)
