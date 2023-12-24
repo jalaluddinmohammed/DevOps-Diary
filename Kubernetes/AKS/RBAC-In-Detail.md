@@ -176,11 +176,6 @@ Utilize an Owner user for your cluster to assign the IAM role "User Access Admin
 
 Employ the Az CLI to assign the "User Access Administrator" role scoped exclusively to the 'blog' namespace:
 
-```bash
-# Az CLI command to assign the "User Access Administrator" role specifically to the 'blog' namespace
-az role assignment create --assignee <group-object-id> --role "User Access Administrator" --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerService/managedClusters/<aks-cluster-name>/namespaces/blog --output none
-
-
 ``` bash
 az role assignment create --role "User Access Administrator" --assignee <<groud-id for aks-blog-admins>> --scope /subscriptions/<<subscription>>/resourcegroups/<<rg>>/providers/Microsoft.ContainerService/managedClusters/<<cluster-name>>/namespaces/blog
 
