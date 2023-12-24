@@ -209,3 +209,26 @@ The choice between the AKS authentication and authorization options revolves aro
 - For assigning permissions to specific namespaces, the Az CLI is required as the Portal lacks this capability currently. The Access Control (IAM) blade assigns roles for the entire cluster.
 
 The decision depends on your specific use case and preferences, considering the management complexity, YAML involvement, ease of access tracking, and tooling limitations within the Azure Portal for precise namespace-level permissions.
+
+### Azure AD Authentication with Kubernetes RBAC:
+
+- Read and Implement Chapter 8 of Kubernetes on Azure Book.
+- Get solid understanding of followings:
+        - ClusterRole
+        - ClusterRoleBinding
+        - Role
+        - RoleBinding
+        - IAM Roles for getting AKS credentials.
+
+  ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/3c263b2d-5b81-43e1-b6ff-7920e45c0e18)
+
+  ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/69dfeb14-a3f5-4c6b-a83f-c41014d8f5aa)
+
+
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/2902fa46-00b7-4a0d-b891-e031ff43a149)
+
+
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/593191c1-63ba-4cb0-b57f-7070d88ffa9f)
+
+  
