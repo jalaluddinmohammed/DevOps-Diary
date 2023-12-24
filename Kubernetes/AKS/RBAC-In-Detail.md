@@ -225,6 +225,8 @@ The decision depends on your specific use case and preferences, considering the 
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/b8ff4e06-e697-42f1-b27f-73bb6742db0a)
 
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/4602ea5f-eb96-49c0-a31f-dc9aaabd9c2b)
+
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/2902fa46-00b7-4a0d-b891-e031ff43a149)
 
