@@ -212,13 +212,13 @@ The decision depends on your specific use case and preferences, considering the 
 
 ### Azure AD Authentication with Kubernetes RBAC:
 
-- Read and Implement Chapter 8 of Kubernetes on Azure Book.
+## Read and Implement Chapter 8 of Kubernetes on Azure Book.
 - Get solid understanding of followings:
-        # ClusterRole
-        # ClusterRoleBinding
-        # Role
-        # RoleBinding
-        # IAM Roles for getting AKS credentials.
+- ClusterRole
+- ClusterRoleBinding
+- Role
+- RoleBinding
+- IAM Roles for getting AKS credentials.
 
 ### Reference Document
 ``` bash
