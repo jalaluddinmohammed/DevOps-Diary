@@ -214,16 +214,16 @@ The decision depends on your specific use case and preferences, considering the 
 
 - Read and Implement Chapter 8 of Kubernetes on Azure Book.
 - Get solid understanding of followings:
-        - ClusterRole
-        - ClusterRoleBinding
-        - Role
-        - RoleBinding
-        - IAM Roles for getting AKS credentials.
+        * ClusterRole
+        *  ClusterRoleBinding
+        * Role
+        * RoleBinding
+        * IAM Roles for getting AKS credentials.
 
-  ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/3c263b2d-5b81-43e1-b6ff-7920e45c0e18)
 
-  ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/69dfeb14-a3f5-4c6b-a83f-c41014d8f5aa)
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/734a0676-b3f3-4aa7-8574-42334d0ed94c)
 
+![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/b8ff4e06-e697-42f1-b27f-73bb6742db0a)
 
 
 ![image](https://github.com/jalaluddinmohammed/DevOps-Diary/assets/145260536/2902fa46-00b7-4a0d-b891-e031ff43a149)
