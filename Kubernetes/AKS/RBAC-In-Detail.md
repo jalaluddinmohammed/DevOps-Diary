@@ -178,7 +178,6 @@ Employ the Az CLI to assign the "User Access Administrator" role scoped exclusiv
 
 ``` bash
 az role assignment create --role "User Access Administrator" --assignee <<groud-id for aks-blog-admins>> --scope /subscriptions/<<subscription>>/resourcegroups/<<rg>>/providers/Microsoft.ContainerService/managedClusters/<<cluster-name>>/namespaces/blog
-
 ```
  Now, users under aks-blog-admins have permissions to assign Azure RBAC roles to other users for the scope of the blog namespace only. They can execute this Az CLI command to assign "Azure Kubernetes Service RBAC Writer" to group aks-blog-users:
 
