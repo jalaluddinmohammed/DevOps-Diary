@@ -10,6 +10,10 @@ az aks create --resource-group rg-handsonaks --name handsonaks --generate-ssh-ke
 
 - This command creates an Azure Kubernetes Service (AKS) cluster named 'handsonaks' in the resource group 'handson' with SSH key generation.
 
+## Specific version of AKS
+ 
+az aks create --resource-group rg-handsonaks --name handsonaks --generate-ssh-keys --kubernetes-version 1.25.15
+
 ## Delete AKS Cluster
 
 
